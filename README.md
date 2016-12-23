@@ -1,5 +1,13 @@
-# ArduinoCollections
-Collections for the Arduino
+# ArduinoCore
+Core Library for the Arduino
+
+Types:
+    - Object
+        - Short
+        - Integer
+        - Float
+        - Double
+        - Long
 
 Collections:
 --------------------------------------------------------------------------------------
