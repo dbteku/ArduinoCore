@@ -11,17 +11,30 @@ private:
 		return "Integer";
 	}
 public:
-	Integer() {
+	Integer() : Object() {
 		value = new int(0);
 	}
-	Integer(int value) {
+	Integer(int value) : Object() {
 		this->value = new int(value);
 	}
-	Integer(short value) {
+	Integer(short value) : Object() {
 		this->value = new int(value);
 	}
 	~Integer() {
 		delete value;
+	}
+
+	bool operator == (const Integer& ref) const
+	{
+		bool areEqual = false;
+		const Integer* me = this;
+		areEqual = me == &ref || *value == *ref.value;
+		return areEqual;
+	}
+
+	virtual bool equals(const Integer& ref) {
+		Integer* me = this;
+		return me == &ref || *value == *ref.value;
 	}
 
 	Integer& operator+(const Integer& ref)

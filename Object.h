@@ -20,6 +20,7 @@ public:
 	}
 
 	virtual bool equals(const Object& ref) {
+		Serial.println("Calling the obj one");
 		Object* me = this;
 		return me == &ref;
 	}

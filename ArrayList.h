@@ -49,18 +49,18 @@ public:
 		delete[] collection;
 	}
 
-	void add(const T* item) {
+	void add(T* item) {
 		if (isEmpty()) {
 			collection = new T[size + 1];
 		}
 		else {
 			makeBiggerAndCopy();
 		}
-		this->collection[size] = item;
+		this->collection[size] = *item;
 		size++;
 	}
 
-	bool contains(const T* item) {
+	bool contains(T item) {
 		bool contains = false;
 		for (unsigned int i = 0; i < size; i++)
 		{
@@ -100,11 +100,7 @@ public:
 	}
 
 	T& get(const unsigned int position) {
-		T& ref = nullptr;
-		if (position <= size - 1) {
-			ref = collection[position]
-		}
-		return ref;
+		return collection[position];
 	}
 
 	T& first() {
