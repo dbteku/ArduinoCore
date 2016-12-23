@@ -72,7 +72,7 @@ public:
 		return contains;
 	}
 
-	void remove(const T* item) {
+	void remove(const T item) {
 		for (unsigned int i = 0; i < size; i++)
 		{
 			if (collection[i] == item) {
@@ -104,19 +104,11 @@ public:
 	}
 
 	T& first() {
-		T ref = NULL;
-		if (!isEmpty()) {
-			return collection[size - size];
-		}
-		return ref;
+		return collection[size - size];
 	}
 
 	T& last() {
-		T ref = NULL;
-		if (!isEmpty()) {
-			return collection[size - 1];
-		}
-		return ref;
+		return collection[size - 1];
 	}
 
 	void removeFirst() {
