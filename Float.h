@@ -87,35 +87,30 @@ public:
 	Float& operator+=(const Float& ref)
 	{
 		float* newValue = new float(*value + *ref.value);
-		Float* newValueObject = new Float(*newValue);
-
-		return *newValueObject;
+		value = newValue;
+		return *this;
 	}
 
 	Float& operator*=(const Float& ref)
 	{
 		float* newValue = new float(*value * *ref.value);
-		Float* newValueObject = new Float(*newValue);
-
-		return *newValueObject;
+		value = newValue;
+		return *this;
 	}
 
 	Float& operator/=(const Float& ref)
 	{
 		float* newValue = new float(*value / *ref.value);
-		Float* newValueObject = new Float(*newValue);
-
-		return *newValueObject;
+		value = newValue;
+		return *this;
 	}
 
 	Float& operator-=(const Float& ref)
 	{
 		float* newValue = new float(*value - *ref.value);
-		Float* newValueObject = new Float(*newValue);
-
-		return *newValueObject;
+		value = newValue;
+		return *this;
 	}
-
 	float& getValue() {
 		return *value;
 	}

@@ -20,6 +20,9 @@ public:
 	Integer(short value) : Object() {
 		this->value = new int(value);
 	}
+	Integer(const Integer& ref) {
+		value = new int(*(ref.value));
+	}
 	~Integer() {
 		delete value;
 	}
@@ -84,33 +87,29 @@ public:
 	Integer& operator+=(const Integer& ref)
 	{                      
 		int* newValue = new int(*value + *ref.value);
-		Integer* newValueObject = new Integer(*newValue);
-
-		return *newValueObject;
+		value = newValue;
+		return *this;
 	}
 
 	Integer& operator*=(const Integer& ref)
 	{
 		int* newValue = new int(*value * *ref.value);
-		Integer* newValueObject = new Integer(*newValue);
-
-		return *newValueObject;
+		value = newValue;
+		return *this;
 	}
 
 	Integer& operator/=(const Integer& ref)
 	{
 		int* newValue = new int(*value / *ref.value);
-		Integer* newValueObject = new Integer(*newValue);
-
-		return *newValueObject;
+		value = newValue;
+		return *this;
 	}
 
 	Integer& operator-=(const Integer& ref)
 	{
 		int* newValue = new int(*value - *ref.value);
-		Integer* newValueObject = new Integer(*newValue);
-
-		return *newValueObject;
+		value = newValue;
+		return *this;
 	}
 
 	int& getValue() {

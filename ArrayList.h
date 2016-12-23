@@ -20,7 +20,6 @@ private:
 			newCollection[i] = collection[i];
 		}
 		if (collection) {
-			delete[] collection;
 			collection = newCollection;
 		}
 	}
@@ -36,7 +35,6 @@ private:
 			index++;
 		}
 		if (collection) {
-			delete[] collection;
 			collection = newCollection;
 		}
 	}
@@ -104,7 +102,7 @@ public:
 	}
 
 	T& first() {
-		return collection[size - size];
+		return collection[0];
 	}
 
 	T& last() {
