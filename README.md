@@ -2,12 +2,12 @@
 Core Library for the Arduino
 
 Types:
-    - Object
-        - Short
-        - Integer
-        - Float
-        - Double
-        - Long
+   - Object
+    - Short
+    - Integer
+    - Float
+    - Double
+    - Long
 
 Collections:
 --------------------------------------------------------------------------------------
