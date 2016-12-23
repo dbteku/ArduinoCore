@@ -21,6 +21,19 @@ public:
 		delete value;
 	}
 
+	bool operator == (const Short& ref) const
+	{
+		bool areEqual = false;
+		const Short* me = this;
+		areEqual = me == &ref || *value == *ref.value;
+		return areEqual;
+	}
+
+	virtual bool equals(const Short& ref) {
+		Short* me = this;
+		return me == &ref || *value == *ref.value;
+	}
+
 	Short& operator+(const Short& ref)
 	{
 		short* newValue = new short(*value + *ref.value);

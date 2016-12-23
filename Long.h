@@ -27,6 +27,19 @@ public:
 		delete value;
 	}
 
+	bool operator == (const Long& ref) const
+	{
+		bool areEqual = false;
+		const Long* me = this;
+		areEqual = me == &ref || *value == *ref.value;
+		return areEqual;
+	}
+
+	virtual bool equals(const Long& ref) {
+		Long* me = this;
+		return me == &ref || *value == *ref.value;
+	}
+
 	Long& operator+(const Long& ref)
 	{
 		long* newValue = new long(*value + *ref.value);

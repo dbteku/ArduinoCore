@@ -27,6 +27,19 @@ public:
 		delete value;
 	}
 
+	bool operator == (const Float& ref) const
+	{
+		bool areEqual = false;
+		const Float* me = this;
+		areEqual = me == &ref || *value == *ref.value;
+		return areEqual;
+	}
+
+	virtual bool equals(const Float& ref) {
+		Float* me = this;
+		return me == &ref || *value == *ref.value;
+	}
+
 	Float& operator+(const Float& ref)
 	{
 		float* newValue = new float(*value + *ref.value);

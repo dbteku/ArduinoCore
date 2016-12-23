@@ -30,6 +30,19 @@ public:
 		delete value;
 	}
 
+	bool operator == (const Double& ref) const
+	{
+		bool areEqual = false;
+		const Double* me = this;
+		areEqual = me == &ref || *value == *ref.value;
+		return areEqual;
+	}
+
+	virtual bool equals(const Double& ref) {
+		Double* me = this;
+		return me == &ref || *value == *ref.value;
+	}
+
 	Double& operator+(const Double& ref)
 	{
 		double* newValue = new double(*value + *ref.value);
