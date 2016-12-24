@@ -51,14 +51,14 @@ public:
 		}
 	}
 
-	void add(const T* item) {
+	void add(const T item) {
 		if (isEmpty()) {
 			collection = new T[size + 1];
 		}
 		else {
 			makeBiggerAndCopy();
 		}
-		this->collection[size] = *item;
+		this->collection[size] = item;
 		size++;
 	}
 
@@ -102,7 +102,11 @@ public:
 	}
 
 	T& get(const unsigned int position) {
-		return collection[position];
+		if (position <= size - 1) {
+			return collection[position];
+		}else{
+			return last();
+		}
 	}
 
 	T& first() {
