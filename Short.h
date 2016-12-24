@@ -33,25 +33,25 @@ public:
 		return value == ref.value;
 	}
 
-	Short& operator+(const Short& ref)
+	Short operator+(const Short& ref)
 	{
 		short newValue = value + ref.value;
 		return Short(newValue);
 	}
 
-	Short& operator-(const Short& ref)
+	Short operator-(const Short& ref)
 	{
 		short newValue = value - ref.value;
 		return Short(newValue);
 	}
 
-	Short& operator*(const Short& ref)
+	Short operator*(const Short& ref)
 	{
 		short newValue = value * ref.value;
 		return Short(newValue);
 	}
 
-	Short& operator/(const Short& ref)
+	Short operator/(const Short& ref)
 	{
 		short newValue = value / ref.value;
 		return Short(newValue);

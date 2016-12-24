@@ -43,25 +43,25 @@ public:
 		return value == ref.value;
 	}
 
-	Double& operator+(const Double& ref)
+	Double operator+(const Double& ref)
 	{
 		double newValue = value + ref.value;
 		return Double(newValue);
 	}
 
-	Double& operator-(const Double& ref)
+	Double operator-(const Double& ref)
 	{
 		double newValue = value - ref.value;
 		return Double(newValue);
 	}
 
-	Double& operator*(const Double& ref)
+	Double operator*(const Double& ref)
 	{
 		double newValue = value * ref.value;
 		return Double(newValue);
 	}
 
-	Double& operator/(const Double& ref)
+	Double operator/(const Double& ref)
 	{
 		double newValue = value / ref.value;
 		return Double(newValue);

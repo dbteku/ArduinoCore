@@ -40,25 +40,25 @@ public:
 		return value == ref.value;
 	}
 
-	Float& operator+(const Float& ref)
+	Float operator+(const Float& ref)
 	{
 		float newValue = value + ref.value;
 		return Float(newValue);
 	}
 
-	Float& operator-(const Float& ref)
+	Float operator-(const Float& ref)
 	{
 		float newValue = value - ref.value;
 		return Float(newValue);
 	}
 
-	Float& operator*(const Float& ref)
+	Float operator*(const Float& ref)
 	{
 		float newValue = value * ref.value;
 		return Float(newValue);
 	}
 
-	Float& operator/(const Float& ref)
+	Float operator/(const Float& ref)
 	{
 		float newValue = value / ref.value;
 		return Float(newValue);

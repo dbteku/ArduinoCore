@@ -39,25 +39,25 @@ public:
 		return value == ref.value;
 	}
 
-	Long& operator+(const Long& ref)
+	Long operator+(const Long& ref)
 	{
 		long newValue = value + ref.value;
 		return Long(newValue);
 	}
 
-	Long& operator-(const Long& ref)
+	Long operator-(const Long& ref)
 	{
 		long newValue = value - ref.value;
 		return Long(newValue);
 	}
 
-	Long& operator*(const Long& ref)
+	Long operator*(const Long& ref)
 	{
 		long newValue = value * ref.value;
 		return Long(newValue);
 	}
 
-	Long& operator/(const Long& ref)
+	Long operator/(const Long& ref)
 	{
 		long newValue = value / ref.value;
 		return Long(newValue);

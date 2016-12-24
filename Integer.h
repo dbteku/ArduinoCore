@@ -20,9 +20,6 @@ public:
 	Integer(short value) : Object() {
 		this->value = int(value);
 	}
-	Integer(const Integer& ref) {
-		this->value = int(ref.value);
-	}
 	~Integer() {
 
 	}
@@ -40,25 +37,25 @@ public:
 		return value == ref.value;
 	}
 
-	Integer& operator+(const Integer& ref)
+	Integer operator+(const Integer& ref)
 	{
 		int newValue = value + ref.value;
 		return Integer(newValue);
 	}
 
-	Integer& operator-(const Integer& ref)
+	Integer operator-(const Integer& ref)
 	{
 		int newValue = value - ref.value;
 		return Integer(newValue);
 	}
 
-	Integer& operator*(const Integer& ref)
+	Integer operator*(const Integer& ref)
 	{
 		int newValue = value * ref.value;
 		return Integer(newValue);
 	}
 
-	Integer& operator/(const Integer& ref)
+	Integer operator/(const Integer& ref)
 	{
 		int newValue = value / ref.value;
 		return Integer(newValue);
