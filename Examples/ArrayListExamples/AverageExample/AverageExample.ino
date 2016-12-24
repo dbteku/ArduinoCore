@@ -49,7 +49,7 @@ Float heapAverage() {
 	}
 	// Creates a new Float to store sum in;
 	Float sum = Float(); // Default set to 0 with no paramaters.
-							 // Add all floats up.
+	// Add all floats up.
 	for (int i = 0; i < 100; i++)
 	{
 		sum += numbers->get(i);
