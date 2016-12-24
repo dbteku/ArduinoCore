@@ -5,65 +5,64 @@
 
 class Short : public Object {
 private:
-	short* value;
+	short value;
 
 	String getName() {
-		return "Short";
+		return F("Short");
 	}
 public:
 	Short() {
-		value = new short(0);
+		value = short(0);
 	}
 	Short(short value) {
-		this->value = new short(value);
+		this->value = short(value);
 	}
 	~Short() {
-		delete value;
 	}
 
 	bool operator == (const Short& ref) const
 	{
 		bool areEqual = false;
 		const Short* me = this;
-		areEqual = me == &ref || *value == *ref.value;
+		areEqual = me == &ref || value == ref.value;
 		return areEqual;
 	}
 
 	virtual bool equals(const Short& ref) {
 		Short* me = this;
-		return me == &ref || *value == *ref.value;
+		return me == &ref || value == ref.value;
 	}
 
 	Short& operator+(const Short& ref)
 	{
-		short* newValue = new short(*value + *ref.value);
-		Short* newValueObject = new Short(*newValue);
-
-		return *newValueObject;
+		short* newValue = new short(value + ref.value);
+		value = *newValue;
+		delete newValue;
+		return *this;
 	}
 
 	Short& operator-(const Short& ref)
 	{
-		short* newValue = new short(*value - *ref.value);
-		Short* newValueObject = new Short(*newValue);
-
-		return *newValueObject;
+		short* newValue = new short(value - ref.value);
+		value = *newValue;
+		delete newValue;
+		return *this;
 	}
 
-	Short& operator *(const Short& ref)
+	Short& operator*(const Short& ref)
 	{
-		short* newValue = new short(*value * *ref.value);
-		Short* newValueObject = new Short(*newValue);
-
-		return *newValueObject;
+		short* newValue = new short(value * ref.value);
+		value = *newValue;
+		delete newValue;
+		return *this;
 	}
 
-	Short& operator /(const Short& ref)
+	Short& operator/(const Short& ref)
 	{
-		short* newValue = new short(*value - *ref.value);
-		Short* newValueObject = new Short(*newValue);
-
-		return *newValueObject;
+		short* newValue = new short(value / ref.value);
+		value = *newValue;
+		delete newValue;
+		return *this;
 	}
 
 	Short& operator++()
@@ -79,43 +78,43 @@ public:
 	}
 
 	Short& operator+=(const Short& ref)
-	{                      
-		short* newValue = new short(*value + *ref.value);
-		Short* newValueObject = new Short(*newValue);
-
-		return *newValueObject;
-	}
-
-	Short& operator*=(const Short& ref)
 	{
-		short* newValue = new short(*value * *ref.value);
-		Short* newValueObject = new Short(*newValue);
-
-		return *newValueObject;
-	}
-
-	Short& operator/=(const Short& ref)
-	{
-		short* newValue = new short(*value / *ref.value);
-		Short* newValueObject = new Short(*newValue);
-
-		return *newValueObject;
+		short* newValue = new short(value + ref.value);
+		value = *newValue;
+		delete newValue;
+		return *this;
 	}
 
 	Short& operator-=(const Short& ref)
 	{
-		short* newValue = new short(*value - *ref.value);
-		Short* newValueObject = new Short(*newValue);
+		short* newValue = new short(value - ref.value);
+		value = *newValue;
+		delete newValue;
+		return *this;
+	}
 
-		return *newValueObject;
+	Short& operator*=(const Short& ref)
+	{
+		short* newValue = new short(value * ref.value);
+		value = *newValue;
+		delete newValue;
+		return *this;
+	}
+
+	Short& operator/=(const Short& ref)
+	{
+		short* newValue = new short(value / ref.value);
+		value = *newValue;
+		delete newValue;
+		return *this;
 	}
 
 	short& getValue() {
-		return *value;
+		return value;
 	}
 
 	String toString() {
-		String string = String(*value);
+		String string = String(value);
 		return string;
 	}
 

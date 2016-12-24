@@ -5,74 +5,71 @@
 
 class Double : public Object {
 private:
-	double* value;
+	double value;
 
 	String getName() {
-		return "Double";
+		return F("Double");
 	}
 public:
 	Double() {
-		value = new double(0);
+		value = double(0);
 	}
 	Double(double value) {
-		this->value = new double(value);
+		value = double(value);
 	}
 	Double(float value) {
-		this->value = new double(value);
-	}
-	Double(int value) {
-		this->value = new double(value);
+		value = double(value);
 	}
 	Double(short value) {
-		this->value = new double(value);
+		value = double(value);
 	}
 	~Double() {
-		delete value;
+
 	}
 
 	bool operator == (const Double& ref) const
 	{
 		bool areEqual = false;
 		const Double* me = this;
-		areEqual = me == &ref || *value == *ref.value;
+		areEqual = me == &ref || value == ref.value;
 		return areEqual;
 	}
 
 	virtual bool equals(const Double& ref) {
 		Double* me = this;
-		return me == &ref || *value == *ref.value;
+		return me == &ref || value == ref.value;
 	}
 
 	Double& operator+(const Double& ref)
 	{
-		double* newValue = new double(*value + *ref.value);
-		Double* newValueObject = new Double(*newValue);
-
-		return *newValueObject;
+		double* newValue = new double(value + ref.value);
+		value = *newValue;
+		delete newValue;
+		return *this;
 	}
 
 	Double& operator-(const Double& ref)
 	{
-		double* newValue = new double(*value - *ref.value);
-		Double* newValueObject = new Double(*newValue);
-
-		return *newValueObject;
+		double* newValue = new double(value - ref.value);
+		value = *newValue;
+		delete newValue;
+		return *this;
 	}
 
-	Double& operator *(const Double& ref)
+	Double& operator*(const Double& ref)
 	{
-		double* newValue = new double(*value * *ref.value);
-		Double* newValueObject = new Double(*newValue);
-
-		return *newValueObject;
+		double* newValue = new double(value * ref.value);
+		value = *newValue;
+		delete newValue;
+		return *this;
 	}
 
-	Double& operator /(const Double& ref)
+	Double& operator/(const Double& ref)
 	{
-		double* newValue = new double(*value - *ref.value);
-		Double* newValueObject = new Double(*newValue);
-
-		return *newValueObject;
+		double* newValue = new double(value / ref.value);
+		value = *newValue;
+		delete newValue;
+		return *this;
 	}
 
 	Double& operator++()
@@ -89,42 +86,42 @@ public:
 
 	Double& operator+=(const Double& ref)
 	{
-		double* newValue = new double(*value + *ref.value);
-		Double* newValueObject = new Double(*newValue);
-
-		return *newValueObject;
-	}
-
-	Double& operator*=(const Double& ref)
-	{
-		double* newValue = new double(*value * *ref.value);
-		Double* newValueObject = new Double(*newValue);
-
-		return *newValueObject;
-	}
-
-	Double& operator/=(const Double& ref)
-	{
-		double* newValue = new double(*value / *ref.value);
-		Double* newValueObject = new Double(*newValue);
-
-		return *newValueObject;
+		double* newValue = new double(value + ref.value);
+		value = *newValue;
+		delete newValue;
+		return *this;
 	}
 
 	Double& operator-=(const Double& ref)
 	{
-		int* newValue = new int(*value - *ref.value);
-		Double* newValueObject = new Double(*newValue);
+		double* newValue = new double(value - ref.value);
+		value = *newValue;
+		delete newValue;
+		return *this;
+	}
 
-		return *newValueObject;
+	Double& operator*=(const Double& ref)
+	{
+		double* newValue = new double(value * ref.value);
+		value = *newValue;
+		delete newValue;
+		return *this;
+	}
+
+	Double& operator/=(const Double& ref)
+	{
+		double* newValue = new double(value / ref.value);
+		value = *newValue;
+		delete newValue;
+		return *this;
 	}
 
 	double& getValue() {
-		return *value;
+		return value;
 	}
 
 	String toString() {
-		String string = String(*value);
+		String string = String(value);
 		return string;
 	}
 
