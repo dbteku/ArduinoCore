@@ -8,8 +8,8 @@ void setup() {
 	Integer stackAvg = stackAverage();
 	Serial.print(F("Stack Average: "));
 	Serial.println(stackAvg.getValue());
-	Float heapAvg = heapAverage();
-	Serial.print(F("Heap Average: "));
+	Float heapAvg = dynamicAverage();
+	Serial.print(F("Dynamic Average: "));
 	Serial.println(heapAvg.getValue());
 }
 
@@ -21,7 +21,7 @@ Integer stackAverage() {
 	// Add Numbers 1-5;
 	for (int i = 1; i <= 5; i++)
 	{
-		integers.add(Integer(i));
+		integers.add(i);
 	}
 	// Creates a new Integer to store sum in;
 	Integer sum = Integer(); // Default set to 0 with no paramaters.
@@ -38,14 +38,14 @@ Integer stackAverage() {
 }
 
 // Heap Average Example
-Float heapAverage() {
+Float dynamicAverage() {
 	// Average of the numbers 1-100. Should be 50.50
 	// Make ArrayList
 	ArrayList<Float>* numbers = new ArrayList<Float>();
 	// Add Numbers 1-100;
-	for (float i = 1; i <= 100; i++)
+	for (int i = 1; i <= 100; i++)
 	{
-		numbers->add(Float(i));
+		numbers->add(i);
 	}
 	// Creates a new Float to store sum in;
 	Float sum = Float(); // Default set to 0 with no paramaters.
@@ -55,7 +55,7 @@ Float heapAverage() {
 		sum += numbers->get(i);
 	}
 	// Make average Float to store average result.
-	Float average = Float();
+	Float average = 0;
 	// Devide by quantity of numbers;
 	average = sum / numbers->count();
 	delete numbers;
