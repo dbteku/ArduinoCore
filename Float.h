@@ -27,49 +27,41 @@ public:
 
 	}
 
-	bool operator == (const Float& ref) const
+	virtual bool operator == (const Float& ref) const
 	{
-		bool areEqual = false;
+		bool areEqual;
 		const Float* me = this;
-		areEqual = me == &ref || value == ref.value;
+		areEqual = value == ref.value;
 		return areEqual;
 	}
 
 	virtual bool equals(const Float& ref) {
 		Float* me = this;
-		return me == &ref || value == ref.value;
+		return value == ref.value;
 	}
 
 	Float& operator+(const Float& ref)
 	{
-		float* newValue = new float(value + ref.value);
-		value = *newValue;
-		delete newValue;
-		return *this;
+		float newValue = value + ref.value;
+		return Float(newValue);
 	}
 
 	Float& operator-(const Float& ref)
 	{
-		float* newValue = new float(value - ref.value);
-		value = *newValue;
-		delete newValue;
-		return *this;
+		float newValue = value - ref.value;
+		return Float(newValue);
 	}
 
 	Float& operator*(const Float& ref)
 	{
-		float* newValue = new float(value * ref.value);
-		value = *newValue;
-		delete newValue;
-		return *this;
+		float newValue = value * ref.value;
+		return Float(newValue);
 	}
 
 	Float& operator/(const Float& ref)
 	{
-		float* newValue = new float(value / ref.value);
-		value = *newValue;
-		delete newValue;
-		return *this;
+		float newValue = value / ref.value;
+		return Float(newValue);
 	}
 
 	Float& operator++()
@@ -86,33 +78,29 @@ public:
 
 	Float& operator+=(const Float& ref)
 	{
-		float* newValue = new float(value + ref.value);
-		value = *newValue;
-		delete newValue;
+		float newValue = value + ref.value;
+		value = Float(newValue).getValue();
 		return *this;
 	}
 
 	Float& operator-=(const Float& ref)
 	{
-		float* newValue = new float(value - ref.value);
-		value = *newValue;
-		delete newValue;
+		float newValue = value - ref.value;
+		value = Float(newValue).getValue();
 		return *this;
 	}
 
 	Float& operator*=(const Float& ref)
 	{
-		float* newValue = new float(value * ref.value);
-		value = *newValue;
-		delete newValue;
+		float newValue = value * ref.value;
+		value = Float(newValue).getValue();
 		return *this;
 	}
 
 	Float& operator/=(const Float& ref)
 	{
-		float* newValue = new float(value / ref.value);
-		value = *newValue;
-		delete newValue;
+		float newValue = value / ref.value;
+		value = Float(newValue).getValue();
 		return *this;
 	}
 
@@ -120,7 +108,7 @@ public:
 		return value;
 	}
 
-	String toString() {
+	virtual String toString() {
 		String string = String(value);
 		return string;
 	}

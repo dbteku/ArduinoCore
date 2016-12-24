@@ -27,49 +27,41 @@ public:
 
 	}
 
-	bool operator == (const Integer& ref) const
+	virtual bool operator == (const Integer& ref) const
 	{
-		bool areEqual = false;
+		bool areEqual;
 		const Integer* me = this;
-		areEqual = me == &ref || value == ref.value;
+		areEqual = value == ref.value;
 		return areEqual;
 	}
 
 	virtual bool equals(const Integer& ref) {
 		Integer* me = this;
-		return me == &ref || value == ref.value;
+		return value == ref.value;
 	}
 
 	Integer& operator+(const Integer& ref)
 	{
-		int* newValue = new int(value + ref.value);
-		value = *newValue;
-		delete newValue;
-		return *this;
+		int newValue = value + ref.value;
+		return Integer(newValue);
 	}
 
 	Integer& operator-(const Integer& ref)
 	{
-		int* newValue = new int(value - ref.value);
-		value = *newValue;
-		delete newValue;
-		return *this;
+		int newValue = value - ref.value;
+		return Integer(newValue);
 	}
 
 	Integer& operator*(const Integer& ref)
 	{
-		int* newValue = new int(value * ref.value);
-		value = *newValue;
-		delete newValue;
-		return *this;
+		int newValue = value * ref.value;
+		return Integer(newValue);
 	}
 
 	Integer& operator/(const Integer& ref)
 	{
-		int* newValue = new int(value / ref.value);
-		value = *newValue;
-		delete newValue;
-		return *this;
+		int newValue = value / ref.value;
+		return Integer(newValue);
 	}
 
 	Integer& operator++()
@@ -86,33 +78,29 @@ public:
 
 	Integer& operator+=(const Integer& ref)
 	{                      
-		int* newValue = new int(value + ref.value);
-		value = *newValue;
-		delete newValue;
+		int newValue = value + ref.value;
+		value = Integer(newValue).getValue();
 		return *this;
 	}
 
 	Integer& operator-=(const Integer& ref)
 	{
-		int* newValue = new int(value - ref.value);
-		value = *newValue;
-		delete newValue;
+		int newValue = value - ref.value;
+		value = Integer(newValue).getValue();
 		return *this;
 	}
 
 	Integer& operator*=(const Integer& ref)
 	{
-		int* newValue = new int(value * ref.value);
-		value = *newValue;
-		delete newValue;
+		int newValue = value * ref.value;
+		value = Integer(newValue).getValue();
 		return *this;
 	}
 
 	Integer& operator/=(const Integer& ref)
 	{
-		int* newValue = new int(value / ref.value);
-		value = *newValue;
-		delete newValue;
+		int newValue = value / ref.value;
+		value = Integer(newValue).getValue();
 		return *this;
 	}
 
@@ -120,7 +108,7 @@ public:
 		return value;
 	}
 
-	String toString() {
+	virtual String toString() {
 		String string = String(value);
 		return string;
 	}

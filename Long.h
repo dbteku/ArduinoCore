@@ -26,49 +26,41 @@ public:
 	~Long() {
 	}
 
-	bool operator == (const Long& ref) const
+	virtual bool operator == (const Long& ref) const
 	{
-		bool areEqual = false;
+		bool areEqual;
 		const Long* me = this;
-		areEqual = me == &ref || value == ref.value;
+		areEqual = value == ref.value;
 		return areEqual;
 	}
 
 	virtual bool equals(const Long& ref) {
 		Long* me = this;
-		return me == &ref || value == ref.value;
+		return value == ref.value;
 	}
 
 	Long& operator+(const Long& ref)
 	{
-		long* newValue = new long(value + ref.value);
-		value = *newValue;
-		delete newValue;
-		return *this;
+		long newValue = value + ref.value;
+		return Long(newValue);
 	}
 
 	Long& operator-(const Long& ref)
 	{
-		long* newValue = new long(value - ref.value);
-		value = *newValue;
-		delete newValue;
-		return *this;
+		long newValue = value - ref.value;
+		return Long(newValue);
 	}
 
 	Long& operator*(const Long& ref)
 	{
-		long* newValue = new long(value * ref.value);
-		value = *newValue;
-		delete newValue;
-		return *this;
+		long newValue = value * ref.value;
+		return Long(newValue);
 	}
 
 	Long& operator/(const Long& ref)
 	{
-		long* newValue = new long(value / ref.value);
-		value = *newValue;
-		delete newValue;
-		return *this;
+		long newValue = value / ref.value;
+		return Long(newValue);
 	}
 
 	Long& operator++()
@@ -85,33 +77,29 @@ public:
 
 	Long& operator+=(const Long& ref)
 	{
-		long* newValue = new long(value + ref.value);
-		value = *newValue;
-		delete newValue;
+		long newValue = value + ref.value;
+		value = Long(newValue).getValue();
 		return *this;
 	}
 
 	Long& operator-=(const Long& ref)
 	{
-		long* newValue = new long(value - ref.value);
-		value = *newValue;
-		delete newValue;
+		long newValue = value - ref.value;
+		value = Long(newValue).getValue();
 		return *this;
 	}
 
 	Long& operator*=(const Long& ref)
 	{
-		long* newValue = new long(value * ref.value);
-		value = *newValue;
-		delete newValue;
+		long newValue = value * ref.value;
+		value = Long(newValue).getValue();
 		return *this;
 	}
 
 	Long& operator/=(const Long& ref)
 	{
-		long* newValue = new long(value / ref.value);
-		value = *newValue;
-		delete newValue;
+		long newValue = value / ref.value;
+		value = Long(newValue).getValue();
 		return *this;
 	}
 
@@ -119,7 +107,7 @@ public:
 		return value;
 	}
 
-	String toString() {
+	virtual String toString() {
 		String string = String(value);
 		return string;
 	}

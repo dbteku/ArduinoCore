@@ -11,7 +11,7 @@ public:
 	~Object() {
 	}
 
-	bool operator == (const Object& ref) const
+	virtual bool operator == (const Object& ref) const
 	{
 		bool areEqual = false;
 		const Object* me = this;
