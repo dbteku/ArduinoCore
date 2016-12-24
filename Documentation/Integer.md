@@ -1,8 +1,8 @@
-# ArduinoCore - Short Class
+# ArduinoCore - Integer Class
 
-Short:
+Integer:
 
-    - Wrapper for the primitive short.
+    - Wrapper for the primitive int.
     - Extends Object.
     
 Methods:

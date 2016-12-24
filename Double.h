@@ -23,6 +23,9 @@ public:
 	Double(short value) {
 		this->value = double(value);
 	}
+	Double(int value) {
+		this->value = double(value);
+	}
 	~Double() {
 
 	}

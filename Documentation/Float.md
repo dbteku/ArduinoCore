@@ -1,8 +1,8 @@
-# ArduinoCore - Short Class
+# ArduinoCore - Float Class
 
-Short:
+Float:
 
-    - Wrapper for the primitive short.
+    - Wrapper for the primitive float.
     - Extends Object.
     
 Methods:
@@ -12,4 +12,4 @@ Methods:
 
 Size:
 
-    - 4 bytes.
+    - 6 bytes.
