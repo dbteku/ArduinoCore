@@ -20,6 +20,7 @@ private:
 			newCollection[i] = collection[i];
 		}
 		if (collection) {
+			delete[] collection;
 			collection = newCollection;
 		}
 	}
@@ -35,6 +36,7 @@ private:
 			index++;
 		}
 		if (collection) {
+			delete[] collection;
 			collection = newCollection;
 		}
 	}
@@ -44,10 +46,12 @@ public:
 		this->size = 0;
 	}
 	~ArrayList() {
-		delete[] collection;
+		if (collection) {
+			delete[] collection;
+		}
 	}
 
-	void add(T* item) {
+	void add(const T* item) {
 		if (isEmpty()) {
 			collection = new T[size + 1];
 		}
@@ -58,7 +62,7 @@ public:
 		size++;
 	}
 
-	bool contains(T item) {
+	bool contains(const T item) {
 		bool contains = false;
 		for (unsigned int i = 0; i < size; i++)
 		{

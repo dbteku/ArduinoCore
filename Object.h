@@ -2,7 +2,7 @@ class Object {
 private:
 
 	virtual String getName() {
-		return "Object";
+		return F("Object");
 	}
 public:
 	Object() {
@@ -20,7 +20,6 @@ public:
 	}
 
 	virtual bool equals(const Object& ref) {
-		Serial.println("Calling the obj one");
 		Object* me = this;
 		return me == &ref;
 	}
@@ -31,7 +30,7 @@ public:
 		unsigned int rawAddress = (uintptr_t)this;
 		String address = String(rawAddress, HEX);
 		string.concat(getName());
-		string.concat("@");
+		string.concat(F("@"));
 		string.concat(address);
 		return string;
 	}
