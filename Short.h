@@ -12,7 +12,7 @@ private:
 	}
 public:
 	Short() {
-		value = short(0);
+		this->value = short(0);
 	}
 	Short(short value) {
 		this->value = short(value);

@@ -12,16 +12,16 @@ private:
 	}
 public:
 	Double() {
-		value = double(0);
+		this->value = double(0);
 	}
 	Double(double value) {
-		value = double(value);
+		this->value = double(value);
 	}
 	Double(float value) {
-		value = double(value);
+		this->value = double(value);
 	}
 	Double(short value) {
-		value = double(value);
+		this->value = double(value);
 	}
 	~Double() {
 

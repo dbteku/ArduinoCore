@@ -21,7 +21,7 @@ public:
 		this->value = int(value);
 	}
 	Integer(const Integer& ref) {
-		value = int(ref.value);
+		this->value = int(ref.value);
 	}
 	~Integer() {
 

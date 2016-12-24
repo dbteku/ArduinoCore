@@ -15,13 +15,13 @@ public:
 		value =  long(0);
 	}
 	Long(long value) {
-		value = long(value);
+		this->value = long(value);
 	}
 	Long(int value) {
-		value = long(value);
+		this->value = long(value);
 	}
 	Long(short value) {
-		value = long(value);
+		this->value = long(value);
 	}
 	~Long() {
 	}

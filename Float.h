@@ -15,10 +15,13 @@ public:
 		value = float(0);
 	}
 	Float(float value) {
-		value = float(value);
+		this->value = float(value);
+	}
+	Float(int value) {
+		this->value = float(value);
 	}
 	Float(short value) {
-		value = float(value);
+		this->value = float(value);
 	}
 	~Float() {
 
