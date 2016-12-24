@@ -1,6 +1,7 @@
 # ArduinoCore - Object Class
 
 Object:
+
     - Base class which every class extends from.
     
 Methods:
