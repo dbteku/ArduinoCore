@@ -18,6 +18,7 @@ Collections:
         to make a new array, copy the values, and add the new number.
     This class will automaticaly do that for you.
     All you have to do is call the add(T item) method. T as in any object you want.
+    Since an arduino has limited memory (RAM) the grow size is set to 1.
     
     Methods:
       - void add(T item) Adds an item to the ArrayList.
