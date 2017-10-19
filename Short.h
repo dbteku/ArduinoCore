@@ -97,6 +97,26 @@ public:
 		return *this;
 	}
 
+	bool operator>=(const Short& ref)
+	{
+		return value >= ref.value;
+	}
+
+	bool operator >(const Short& ref)
+	{
+		return value > ref.value;
+	}
+
+	bool operator <(const Short& ref)
+	{
+		return value < ref.value;
+	}
+
+	bool operator<=(const Short& ref)
+	{
+		return value <= ref.value;
+	}
+
 	short& getValue() {
 		return value;
 	}
