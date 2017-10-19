@@ -127,7 +127,7 @@ public:
 		return value <= ref.value;
 	}
 
-	double& getValue() {
+	double getValue() {
 		return value;
 	}
 

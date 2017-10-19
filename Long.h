@@ -123,7 +123,7 @@ public:
 		return value <= ref.value;
 	}
 
-	long& getValue() {
+	long getValue() {
 		return value;
 	}
 

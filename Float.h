@@ -124,7 +124,7 @@ public:
 		return value <= ref.value;
 	}
 
-	float& getValue() {
+	float getValue() {
 		return value;
 	}
 

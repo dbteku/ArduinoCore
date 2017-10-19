@@ -117,7 +117,7 @@ public:
 		return value <= ref.value;
 	}
 
-	short& getValue() {
+	short getValue() {
 		return value;
 	}
 

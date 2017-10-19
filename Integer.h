@@ -121,7 +121,7 @@ public:
 		return value <= ref.value;
 	}
 
-	int& getValue() {
+	int getValue() {
 		return value;
 	}
 
