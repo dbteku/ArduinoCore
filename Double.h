@@ -107,6 +107,26 @@ public:
 		return *this;
 	}
 
+	bool operator>=(const Double& ref)
+	{
+		return value >= ref.value;
+	}
+
+	bool operator >(const Double& ref)
+	{
+		return value > ref.value;
+	}
+
+	bool operator <(const Double& ref)
+	{
+		return value < ref.value;
+	}
+
+	bool operator<=(const Double& ref)
+	{
+		return value <= ref.value;
+	}
+
 	double& getValue() {
 		return value;
 	}

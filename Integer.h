@@ -101,6 +101,26 @@ public:
 		return *this;
 	}
 
+	bool operator>=(const Integer& ref)
+	{
+		return value >= ref.value;
+	}
+
+	bool operator >(const Integer& ref)
+	{
+		return value > ref.value;
+	}
+
+	bool operator <(const Integer& ref)
+	{
+		return value < ref.value;
+	}
+
+	bool operator<=(const Integer& ref)
+	{
+		return value <= ref.value;
+	}
+
 	int& getValue() {
 		return value;
 	}

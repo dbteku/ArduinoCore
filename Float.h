@@ -104,6 +104,26 @@ public:
 		return *this;
 	}
 
+	bool operator>=(const Float& ref)
+	{
+		return value >= ref.value;
+	}
+
+	bool operator >(const Float& ref)
+	{
+		return value > ref.value;
+	}
+
+	bool operator <(const Float& ref)
+	{
+		return value < ref.value;
+	}
+
+	bool operator<=(const Float& ref)
+	{
+		return value <= ref.value;
+	}
+
 	float& getValue() {
 		return value;
 	}

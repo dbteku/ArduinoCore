@@ -1,7 +1,6 @@
 #ifndef Arduino_h
 #define Arduino_h
 #include <Arduino.h>
-#include <Spi.h>
 #endif
 
 class System {
@@ -13,9 +12,9 @@ public:
 	}
 
 	static void startSerial() {
-		if (BAUD_RATE) {
-			Serial.end();
-		}
+		//if (BAUD_RATE) {
+		//	Serial.end();
+		//}
 		Serial.begin(BAUD_RATE);
 	}
 

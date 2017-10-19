@@ -103,6 +103,26 @@ public:
 		return *this;
 	}
 
+	bool operator>=(const Long& ref)
+	{
+		return value >= ref.value;
+	}
+
+	bool operator >(const Long& ref)
+	{
+		return value > ref.value;
+	}
+
+	bool operator <(const Long& ref)
+	{
+		return value < ref.value;
+	}
+
+	bool operator<=(const Long& ref)
+	{
+		return value <= ref.value;
+	}
+
 	long& getValue() {
 		return value;
 	}
